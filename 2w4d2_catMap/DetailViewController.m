@@ -24,7 +24,7 @@
     self.label.text = self.photo.imageTitle;
     
     // ***** convert url to image *****
-    NSData *data = [NSData dataWithContentsOfURL:self.photo.url];
+    NSData *data = [NSData dataWithContentsOfURL:self.photo.urlImage];
     UIImage *image = [UIImage imageWithData:data];
     self.imageView.image = image;
 }

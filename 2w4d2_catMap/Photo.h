@@ -7,13 +7,15 @@
 //
 
 @import UIKit;
+@import MapKit;
 
 @interface Photo : NSObject
 
 @property (strong, nonatomic) NSString *imageTitle;
 @property (strong, nonatomic) UIImage *photo;
-@property (strong, nonatomic) NSURL *url;
+@property (strong, nonatomic) NSURL *urlImage;
+@property (strong, nonatomic) NSURL *urlLocator;
 
-- (instancetype)initWithTitle:(NSString*)title andURL:(NSURL*)url;
+- (instancetype)initWithTitle:(NSString*)title andURLImage:(NSURL*)urlImage andURLLocator:(NSURL*)urlLocator;
 
 @end

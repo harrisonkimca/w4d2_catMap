@@ -50,7 +50,7 @@
     cell.label.text = photo.imageTitle;
     
     // ***** convert url into image *****
-    NSData *data = [NSData dataWithContentsOfURL:photo.url];
+    NSData *data = [NSData dataWithContentsOfURL:photo.urlImage];
     UIImage *image = [UIImage imageWithData:data];
     cell.imageView.image = image;
     

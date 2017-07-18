@@ -22,7 +22,7 @@
 + (void)getData:(void (^)(NSMutableArray *tmpArray))complete
 {
     // make http request for json
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=%@&&tags=cat", FLICKR_APIKEY]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=%@&tags=cat&has_geo=1", FLICKR_APIKEY]];
     NSURLRequest *urlRequest = [[NSURLRequest alloc]initWithURL:url];
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -60,13 +60,18 @@
             NSString *mySecret = [myPhoto valueForKey:@"secret"];
                                           
             NSString *myTitle = [myPhoto valueForKey:@"title"];
-                                          
-            NSString *urlString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg", myFarm, myServer, myID, mySecret];
-                                          
-            NSLog(@"%@", urlString);
-                                          
-            Photo *photo = [[Photo alloc]initWithTitle:myTitle andURL:[NSURL URLWithString:urlString]];
-            //NSLog(@"%@, %@, %@", myPhoto, photo.imageTitle, photo.url);
+            
+            //image URL
+            NSString *urlImageString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg", myFarm, myServer, myID, mySecret];
+            //NSLog(@"urlImage: %@", urlImageString);
+            
+            //locator URL
+            NSString *urlLocatorString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation&format=json&nojsoncallback=1&api_key=%@&photo_id=%@", FLICKR_APIKEY, myID];
+            NSLog(@"urlLocator: %@", urlLocatorString);
+            
+            
+            Photo *photo = [[Photo alloc]initWithTitle:myTitle andURLImage:[NSURL URLWithString:urlImageString] andURLLocator:[NSURL URLWithString:urlLocatorString]];
+            //NSLog(@"%@, %@, %@, %@", myPhoto, photo.imageTitle, photo.urlImage, photo.urlLocator);
             [resultsArray addObject:photo];
         }
         complete(resultsArray);
