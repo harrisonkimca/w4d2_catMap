@@ -10,9 +10,10 @@
 
 @interface Photo : NSObject
 
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *imageTitle;
 @property (strong, nonatomic) UIImage *photo;
+@property (strong, nonatomic) NSURL *url;
 
-- (instancetype)initWithName:(NSString*)name Photo:(UIImage*)photo;
+- (instancetype)initWithTitle:(NSString*)title andURL:(NSURL*)url;
 
 @end

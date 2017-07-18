@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Photo.h"
+#import "PhotoCollectionViewCell.h"
 
 @interface FlickrAPI : NSObject
+
++ (void)getData:(void (^)(NSMutableArray *tmpArray))complete;
 
 @end

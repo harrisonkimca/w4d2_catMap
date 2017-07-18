@@ -10,6 +10,8 @@
 #import "Photo.h"
 #import "PhotoCollectionViewCell.h"
 #import "DetailViewController.h"
+#import "Key.h"
+#import "FlickrAPI.h"
 
 @interface FirstViewController ()<UICollectionViewDataSource>
 
@@ -25,15 +27,16 @@
     
     self.collectionView.dataSource = self;
     
-    [self createData];
+    [FlickrAPI getData:^(NSMutableArray *resultsArray) {
+        NSLog(@"Flickr data: %@", resultsArray);
+        self.photos = [NSArray arrayWithArray:resultsArray];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.collectionView reloadData];
+        }];
+    }];
 }
 
-- (void)createData
-{
-    Photo *photo1 = [[Photo alloc]initWithName:@"Chicago" Photo:[UIImage imageNamed:@"chicago"]];
-    
-    self.photos = @[photo1];
-}
+#pragma mark - Datasouce
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -43,11 +46,13 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    
     Photo *photo = self.photos [indexPath.row];
+    cell.label.text = photo.imageTitle;
     
-    cell.label.text = photo.name;
-    cell.imageView.image = photo.photo;
+    // ***** convert url into image *****
+    NSData *data = [NSData dataWithContentsOfURL:photo.url];
+    UIImage *image = [UIImage imageWithData:data];
+    cell.imageView.image = image;
     
     return cell;
 }
