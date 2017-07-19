@@ -17,6 +17,8 @@
         _imageTitle = title;
         _urlImage = urlImage;
         _urlLocator = urlLocator;
+        _latitude = 0;
+        _longitude = 0;
     }
     return self;
 }

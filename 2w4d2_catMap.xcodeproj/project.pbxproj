@@ -18,6 +18,8 @@
 		882C098C1F1E9CFB00B004FD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 882C098B1F1E9CFB00B004FD /* Photo.m */; };
 		882C098F1F1EA3E000B004FD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882C098E1F1EA3E000B004FD /* DetailViewController.m */; };
 		882C09961F1EA8AA00B004FD /* FlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 882C09951F1EA8AA00B004FD /* FlickrAPI.m */; };
+		882C099A1F1ED26300B004FD /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882C09991F1ED26300B004FD /* MapViewController.m */; };
+		88FC354C1F1F01CC008A7537 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FC354B1F1F01CC008A7537 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		882C09941F1EA8AA00B004FD /* FlickrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrAPI.h; path = ../FlickrAPI.h; sourceTree = "<group>"; };
 		882C09951F1EA8AA00B004FD /* FlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrAPI.m; path = ../FlickrAPI.m; sourceTree = "<group>"; };
 		882C09971F1EA8BD00B004FD /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Key.h; path = ../Key.h; sourceTree = "<group>"; };
+		882C09981F1ED26300B004FD /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		882C09991F1ED26300B004FD /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		88FC354A1F1F01CC008A7537 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		88FC354B1F1F01CC008A7537 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,10 @@
 				882C09851F1E9B2500B004FD /* FirstViewController.m */,
 				882C098D1F1EA3E000B004FD /* DetailViewController.h */,
 				882C098E1F1EA3E000B004FD /* DetailViewController.m */,
+				882C09981F1ED26300B004FD /* MapViewController.h */,
+				882C09991F1ED26300B004FD /* MapViewController.m */,
+				88FC354A1F1F01CC008A7537 /* SearchViewController.h */,
+				88FC354B1F1F01CC008A7537 /* SearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,6 +280,8 @@
 				882C098C1F1E9CFB00B004FD /* Photo.m in Sources */,
 				882C09641F1E99CD00B004FD /* AppDelegate.m in Sources */,
 				882C09961F1EA8AA00B004FD /* FlickrAPI.m in Sources */,
+				882C099A1F1ED26300B004FD /* MapViewController.m in Sources */,
+				88FC354C1F1F01CC008A7537 /* SearchViewController.m in Sources */,
 				882C09611F1E99CD00B004FD /* main.m in Sources */,
 				882C09891F1E9B5D00B004FD /* PhotoCollectionViewCell.m in Sources */,
 				882C09861F1E9B2500B004FD /* FirstViewController.m in Sources */,
@@ -472,6 +484,7 @@
 				882C09801F1E99CE00B004FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		882C09811F1E99CE00B004FD /* Build configuration list for PBXNativeTarget "2w4d2_catMapTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +493,7 @@
 				882C09831F1E99CE00B004FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

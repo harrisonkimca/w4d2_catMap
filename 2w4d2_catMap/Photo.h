@@ -15,6 +15,8 @@
 @property (strong, nonatomic) UIImage *photo;
 @property (strong, nonatomic) NSURL *urlImage;
 @property (strong, nonatomic) NSURL *urlLocator;
+@property (nonatomic) float latitude;
+@property (nonatomic) float longitude;
 
 - (instancetype)initWithTitle:(NSString*)title andURLImage:(NSURL*)urlImage andURLLocator:(NSURL*)urlLocator;
 

@@ -12,6 +12,6 @@
 
 @interface FlickrAPI : NSObject
 
-+ (void)getData:(void (^)(NSMutableArray *tmpArray))complete;
++ (void)getData:(NSString*)query completionHandler:(void (^)(NSMutableArray *resultsArray))complete;
 
 @end
