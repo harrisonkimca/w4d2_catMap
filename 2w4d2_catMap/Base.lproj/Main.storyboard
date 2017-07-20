@@ -98,7 +98,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago" translatesAutoresizingMaskIntoConstraints="NO" id="Nrr-f9-QGW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago" translatesAutoresizingMaskIntoConstraints="NO" id="Nrr-f9-QGW">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="117"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nn-BB-Fn6">
@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="856.79999999999995" y="784.85757121439292"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="bSx-jG-kHm">
             <objects>
                 <viewController id="kg3-nl-8Be" customClass="DetailViewController" sceneMemberID="viewController">
@@ -169,7 +169,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago" translatesAutoresizingMaskIntoConstraints="NO" id="76l-2a-eEx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago" translatesAutoresizingMaskIntoConstraints="NO" id="76l-2a-eEx">
                                 <rect key="frame" x="16" y="164" width="343" height="309"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-H9-dgQ">
@@ -182,25 +182,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dp-fB-G6X">
-                                <rect key="frame" x="259" y="109" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="5IL-VO-8yu"/>
-                                    <constraint firstAttribute="height" constant="40" id="NqF-9A-wXK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Location &gt;"/>
-                                <connections>
-                                    <segue destination="wm8-CJ-sKJ" kind="show" identifier="MapViewController" id="BYQ-GT-l3Q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="5dp-fB-G6X" secondAttribute="trailing" id="3AV-Ow-zlu"/>
                             <constraint firstItem="ZRz-em-CMG" firstAttribute="top" secondItem="tPA-H9-dgQ" secondAttribute="bottom" constant="75" id="5JN-fD-owr"/>
                             <constraint firstItem="76l-2a-eEx" firstAttribute="top" secondItem="r7U-au-Hhf" secondAttribute="bottom" constant="100" id="8sm-8U-Jfm"/>
-                            <constraint firstItem="5dp-fB-G6X" firstAttribute="top" secondItem="r7U-au-Hhf" secondAttribute="bottom" constant="45" id="GXD-Mm-MjY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="76l-2a-eEx" secondAttribute="trailing" id="cQ8-ID-KXJ"/>
                             <constraint firstItem="tPA-H9-dgQ" firstAttribute="centerX" secondItem="w7K-oY-ww3" secondAttribute="centerX" id="h76-Ru-T6P"/>
                             <constraint firstItem="ZRz-em-CMG" firstAttribute="top" secondItem="76l-2a-eEx" secondAttribute="bottom" constant="150" id="rVe-fy-A23"/>
@@ -208,6 +194,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="6CP-pL-Nui">
+                        <barButtonItem key="rightBarButtonItem" title="Location &gt;" id="DLy-0H-baT">
+                            <connections>
+                                <segue destination="wm8-CJ-sKJ" kind="show" identifier="MapViewController" id="TU3-lf-h7e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="76l-2a-eEx" id="DcN-QS-fl8"/>

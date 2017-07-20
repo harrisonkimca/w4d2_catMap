@@ -19,8 +19,20 @@
 
 // http://fuckingblocksyntax.com/
 // use completion block to return array of results
-+ (void)getData:(NSString*)query completionHandler:(void (^)(NSMutableArray *resultsArray))complete
++ (void)getPhotoData:(NSString*)query completionHandler:(void (^)(NSMutableArray *resultsArray))complete
 {
+    NSURLComponents *components = [[NSURLComponents alloc]init];
+    components.scheme = @"https";
+    components.host = @"api.flickr.com";
+    components.path = @"services/rest";
+    components.query = @"method=flickr.photos.search&format=json&nojsoncallback=1";
+    components.user = [NSString stringWithFormat:@"api_key=%@", FLICKR_APIKEY];
+    components.query = [NSString stringWithFormat:@"tags=%@", query];
+    components.fragment = @"has_geo=1";
+    
+    NSLog(@"%@", components.URL);
+    
+    
     // make http request for json
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=%@&tags=%@&has_geo=1", FLICKR_APIKEY, query]];
     NSURLRequest *urlRequest = [[NSURLRequest alloc]initWithURL:url];

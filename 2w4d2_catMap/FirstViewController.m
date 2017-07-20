@@ -27,7 +27,7 @@
     
     self.collectionView.dataSource = self;
     
-    [FlickrAPI getData:@"Cat" completionHandler:^(NSMutableArray *resultsArray) {
+    [FlickrAPI getPhotoData:@"Cat" completionHandler:^(NSMutableArray *resultsArray) {
         NSLog(@"Flickr data: %@", resultsArray);
         self.photos = [NSArray arrayWithArray:resultsArray];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{

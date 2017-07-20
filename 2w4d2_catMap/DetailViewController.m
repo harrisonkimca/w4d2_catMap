@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "Photo.h"
+#import "MapViewController.h"
 
 @interface DetailViewController ()
 
@@ -64,5 +65,13 @@
         }];
     
     [dataTask resume];
+    
+    if ([segue.identifier isEqualToString:@"MapViewController"])
+    {
+        MapViewController *dvc = segue.destinationViewController;
+        dvc.photo = self.photo;
+    }
+    
+    
 }
 @end
